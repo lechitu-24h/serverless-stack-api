@@ -1,4 +1,5 @@
 const config = {
+  MAX_ATTACHMENT_SIZE: 5000000,
   s3: {
     REGION: 'us-east-1',
     BUCKET: 'notes-app-upload-tu',
@@ -11,7 +12,7 @@ const config = {
     REGION: 'us-east-1',
     USER_POOL_ID: 'us-east-1_iWgHqGy0U',
     APP_CLIENT_ID: '639a7f800mqtk0otap2ee632ef',
-    IDENTITY_POOL_ID: 'us-east-1:1dbbd0b7-591d-4787-8c83-ebde58e858a5',
+    IDENTITY_POOL_ID: 'us-east-1:0d0e7d1b-281b-4165-8e98-7ba0ee8c7383',
   },
 };
 
