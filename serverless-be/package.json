@@ -20,6 +20,7 @@
     "serverless-offline": "^5.3.3"
   },
   "dependencies": {
+    "@sentry/browser": "^6.0.1",
     "stripe": "^8.129.0",
     "uuid": "^7.0.3"
   }
