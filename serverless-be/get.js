@@ -1,11 +1,6 @@
 import handler from './libs/handler-lib';
 import dynamoDb from './libs/dynamodb-lib';
 
-function allocMem() {
-  let bigList = Array(4096000).fill(1);
-  return bigList.concat(allocMem());
-}
-
 export const main = handler(async (event, context) => {
   const params = {
     TableName: process.env.tableName,
@@ -14,7 +9,7 @@ export const main = handler(async (event, context) => {
     // - 'noteId': path parameter
     Key: {
       userId: event.requestContext.identity.cognitoIdentityId,
-      noteId: event.pathParameters.id,
+      // noteId: event.pathParameters.id
     },
   };
 
@@ -22,8 +17,6 @@ export const main = handler(async (event, context) => {
   if (!result.Item) {
     throw new Error('Item not found.');
   }
-
-  allocMem();
 
   // Return the retrieved item
   return result.Item;
