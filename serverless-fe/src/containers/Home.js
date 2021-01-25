@@ -58,7 +58,7 @@ export default function Home() {
   }, [isAuthenticated]);
 
   function loadNotes() {
-    return API.get('notes', '/notes');
+    return API.put('notes', '/notes');
   }
 
   function renderLander() {
@@ -82,7 +82,6 @@ export default function Home() {
   return (
     <div className="Home">
       {isAuthenticated ? renderNotes() : renderLander()}
-      {isAuthenticated.none.no}
     </div>
   );
 }
